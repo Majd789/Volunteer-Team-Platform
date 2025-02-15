@@ -22,8 +22,14 @@
             </form>
         </div>
 
+        <!-- زر إضافة مستخدم جديد -->
+        <div class="mb-3">
+            <a href="{{ route('users.create') }}" class="btn btn-success">Add New User</a>
+        </div>
+
         <!-- Classrooms List -->
-        <table class="table table-bordered">
+            <div class="table-responsive">
+                <table class="table table-bordered">
             <thead>
             <tr>
                 <th>Name</th>
@@ -45,11 +51,12 @@
             @endforeach
             </tbody>
         </table>
+            </div>
 
         <!-- Pagination Links -->
-{{--        <div class="d-flex justify-content-center">--}}
-{{--            {{ $Users->appends(request()->input())->links('pagination::bootstrap-4') }}--}}
-{{--        </div>--}}
+        <div class="d-flex justify-content-center">
+            {{ $Users->appends(request()->input())->links('pagination::bootstrap-4') }}
+        </div>
 
-{{--    </div>--}}
+    </div>
 @endsection

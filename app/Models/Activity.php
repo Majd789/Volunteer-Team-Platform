@@ -10,7 +10,7 @@ class Activity extends Model
 {
     use HasFactory;
 
-    protected $fillable = ['title', 'description', 'start_date', 'end_date', 'location'];
+    protected $fillable = ['title', 'description','photo', 'start_date', 'end_date', 'location'];
 
     public function registrations(): HasMany
     {

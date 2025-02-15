@@ -1,6 +1,8 @@
 <?php
 
+use App\Http\Controllers\Dashboard\ActivityController;
 use App\Http\Controllers\Dashboard\DashboardController;
+use App\Http\Controllers\Dashboard\GalleryController;
 use App\Http\Controllers\Dashboard\UserController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
@@ -25,8 +27,9 @@ Route::get('/dashboard', [DashboardController::class, 'index'])
     ->name('dashboard.index');
 
 //Users Route
-Route::resource('dashboard/users',UserController::class);
-
+Route::resource('dashboard/users',UserController::class)->middleware('auth');
+Route::resource('dashboard/activities',ActivityController::class)->middleware('auth');
+Route::resource('dashboard/gallery',GalleryController::class)->middleware('auth');
 
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');

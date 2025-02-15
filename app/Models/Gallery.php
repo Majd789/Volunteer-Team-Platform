@@ -9,8 +9,8 @@ use Illuminate\Database\Eloquent\Relations\BelongsTo;
 class Gallery extends Model
 {
     use HasFactory;
-    protected $fillable = ['activity_id', 'media_type', 'media_url', 'uploaded_at'];
-
+    protected $fillable = ['activity_id', 'media_type', 'media_url'];
+    protected $table = 'gallery'; // تحديد اسم الجدول في قاعدة البيانات
     public function activity(): BelongsTo
     {
         return $this->belongsTo(Activity::class);

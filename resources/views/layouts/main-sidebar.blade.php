@@ -1,7 +1,7 @@
 <!-- Brand Logo -->
 {{--<a href="index3.html" class="brand-link">--}}
 {{--    <img src="{{asset('dist/img/AdminLTELogo.png')}}" alt="AdminLTE Logo" class="brand-image img-circle elevation-3" style="opacity: .8">--}}
-<span class=" brand-link brand-text font-weight-light">School System</span>
+<span class=" brand-link brand-text font-weight-light">Volunteer Team</span>
 {{--</a>--}}
 
 <!-- Sidebar -->
@@ -48,9 +48,15 @@
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a href="" class="nav-link {{ request()->routeIs('test.index') ? 'active' : '' }}">
+                        <a href="{{route('activities.index')}}" class="nav-link {{ request()->routeIs('activities.index') ? 'active' : '' }}">
                             <i class="far fa-circle nav-icon"></i>
-                            <p>test</p>
+                            <p>Activities</p>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="{{route('gallery.index')}}" class="nav-link {{ request()->routeIs('gallery.index') ? 'active' : '' }}">
+                            <i class="far fa-circle nav-icon"></i>
+                            <p>Gallery</p>
                         </a>
                     </li>
                 </ul>
